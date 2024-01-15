@@ -120,7 +120,14 @@ ol {
 
 /* Скрывание */
 .visually-hidden {
-  display: none;
+  position: absolute;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  border: 0;
 }
 
 /* Поле ввода */
@@ -170,6 +177,10 @@ ol {
   block-size: 19px;
 }
 
+.search-form__pseudo-checkbox:focus {
+  outline: 1px solid #fff;
+}
+
 /* Оформление выбранных чекбоксов */
 .search-form__checkbox:checked + .search-form__pseudo-checkbox::after {
   content: '';
@@ -177,6 +188,7 @@ ol {
   background-color: #fff;
   inline-size: 15px;
   block-size: 15px;
+  margin: 1px;
 }
 
 /* Кнопка */
@@ -257,6 +269,7 @@ ol {
 
 .content__card-link:focus-visible {
   outline: 1px solid #fff;
+  outline-offset: -1px;
 }
 
 .content__card-link_current {
